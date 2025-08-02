@@ -2,4 +2,4 @@ service:
   nodeport: 30080
 deployment:
   replicas: 3
-  imageVersion: stable-alpine-perl
+  imageVersion: nginx:stable-alpine-perl
