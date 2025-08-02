@@ -18,8 +18,8 @@ spec:
         tier: web
     spec:
       containers:
-      - name: nginx
-        image: {{ .Values.deployment.imageRepository }}:{{ .Values.deployment.imageVersion }}
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.deployment.imageRepository }}:{{ .Values.deployment.imageVersion }}"
         ports:
         - containerPort: 80
 
