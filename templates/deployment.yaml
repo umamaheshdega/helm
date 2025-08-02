@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: nginx-deployment
+  namespace: expense
   labels:
     app: nginx
     tier: web
@@ -21,21 +22,7 @@ spec:
         image: {{ .Values.deployment.imageVersion}}
         ports:
         - containerPort: 80
----
-kind: Service
-apiVersion: v1
-metadata:
-  name: nginx
-spec:
-  type: LoadBalancer
-  selector:
-    app: nginx
-    tier: web
-  ports:
-  - protocol: TCP
-    port: 80
-    targetPort: 80
-    nodePort: {{ .Values.service.nodeport }}
+
 
 
 
